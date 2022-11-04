@@ -8,9 +8,6 @@
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
-
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
 
@@ -257,29 +254,32 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-md-6 text-center">
-                    <h5 class="font-weight-normal text-muted mb-3 pb-3"> Please let us know about your presence as soon as possible and not later than the 30th of June 2023. <br><br> For this purpose use either the form below or our fb pages or call/text any of us <br> Eva: TLF <br>George: TLF</h5>
+                    <h5 class="font-weight-normal text-muted mb-3 pb-3"> Please let us know about your presence as soon as possible and no later than the 30th of June 2023. <br><br> You can use the form below or contact either of us with a call, sms or facebook message.</h5>
                 </div>
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="text-center">
-                        <form method="post" action="mailto:mail@gmail.com">
+                        <form name="gform" id="gform" enctype="text/plain" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdmnsIC9Sw6KM_MwlZonn1oJymcahQf9j_7Q2ylvlUWj1t6cQ/formResponse"
+                        target="hidden_iframe" onsubmit="submitted=true?">
                             <div class="form-row">
                                 <div class="form-group col-sm-6">
-                                    <input type="text" class="form-control bg-secondary border-0 py-4 px-3" placeholder="Your Name"/>
+                                    <input type="text" name="entry.1339435912" id="entry.1339435912" class="form-control bg-secondary border-0 py-4 px-3" placeholder="Your Name" required="required"/>
                                 </div>
                                 <div class="form-group col-sm-6">
-                                    <input type="email" class="form-control bg-secondary border-0 py-4 px-3" placeholder="Your Email"/>
+                                    <input type="email" name="entry.1468998573" id="entry.1468998573" class="form-control bg-secondary border-0 py-4 px-3" placeholder="Your Email" required="required"/>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-sm-6">
-                                    <select class="form-control bg-secondary border-0" style="height: 52px;">
-                                        <option>Number of Guest</option>
+                                 <label for="entry.914859765">Number of Guests</label>
+                                    <select  name="entry.914859765" id="entry.914859765" class="form-control bg-secondary border-0" style="height: 52px;" required="required">
+                                        <!-- <option>Number of Guests</option> -->
                                         <option>1</option>
                                         <option>2</option>
                                         <option>3</option>
                                         <option>4</option>
+                                        <option>5</option>
                                     </select>
                                 </div>
                                 <!-- <div class="form-group col-sm-6">
@@ -291,12 +291,13 @@
                                 </div> -->
                             </div>
                             <div class="form-group">
-                                <textarea class="form-control bg-secondary border-0 py-2 px-3" rows="5" placeholder="Message and/or songs that you would like us to add in our playlist" required="required"></textarea>
+                                <textarea  name="entry.242883898" id="entry.242883898" class="form-control bg-secondary border-0 py-2 px-3" rows="5" placeholder="Message and/or songs that you would like us to add in our playlist"></textarea>
                             </div>
                             <div>
                                 <button class="btn btn-primary font-weight-bold py-3 px-5" type="submit">Submit</button>
                             </div>
                         </form>
+                        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
                     </div>
                 </div>
             </div>
@@ -485,6 +486,14 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script type="text/javascript">var submitted=false;</script>
+    <script type="text/javascript">
+    $('#gform').on('submit', function(e) {
+        $('#gform *').fadeOut(2000);
+        $('#gform').prepend('Your submission has been processed...');
+    });
+    </script>
 </body>
 
 </html>
